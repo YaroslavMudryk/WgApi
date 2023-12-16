@@ -9,6 +9,8 @@
             var result = await client.Wargaming.SearchAccountsAsync("Rozvidnyk");
 
             var rs = await client.Wargaming.GetAccountInfoAsync(result.First().AccountId);
+
+            var a = await client.WorldOfTanks.SearchAccountsAsync(result.First().Nickname);
         }
     }
 }
