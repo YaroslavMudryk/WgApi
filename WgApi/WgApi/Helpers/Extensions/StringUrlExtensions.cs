@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WgApi.Helpers
+namespace WgApi.Helpers.Extensions
 {
     public static class StringUrlExtensions
     {
