@@ -9,15 +9,11 @@ namespace WgApi
         private readonly string _applicationId;
         private readonly string _baseUrl;
 
-        public WgApi(string applicationId, string accessToken = null, string baseUrl = null) : this()
+        public WgApi(string applicationId, string accessToken = null, string baseUrl = null)
         {
             _applicationId = applicationId;
             _accessToken = accessToken;
             _baseUrl = baseUrl ?? "https://api.worldoftanks.eu";
-        }
-
-        private WgApi()
-        {
             WorldOfTanks = new WorldOfTanksService(_applicationId, _accessToken, _baseUrl);
             WorldOfTanksBlitz = new WorldOfTanksBlitzService(_applicationId, _accessToken, _baseUrl);
             WorldOfTanksConsole = new WorldOfTanksConsoleService(_applicationId, _accessToken, _baseUrl);

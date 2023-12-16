@@ -9,5 +9,6 @@ namespace WgApi
         WorldOfTanksConsoleService WorldOfTanksConsole { get; }
         WorldOfWarplanesService WorldOfWarplanes { get; }
         WorldOfWarshipsService WorldOfWarships { get; }
+        public WargamingNetService Wargaming { get; }
     }
 }

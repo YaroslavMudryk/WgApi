@@ -11,9 +11,9 @@ namespace WgApi.Services
 
         public async Task<Dictionary<string, List<Server>>> GetServersAsync()
         {
-            var response = await GetResponseAsync<Response<Dictionary<string, List<Server>>>>("wgn/servers/info?");
+            var response = await GetResponseAsync<Dictionary<string, List<Server>>>("wgn/servers/info/?");
 
-            return new Dictionary<string, List<Server>>();
+            return response.Data;
         }
     }
 }
