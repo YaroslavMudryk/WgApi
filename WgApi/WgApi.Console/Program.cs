@@ -8,7 +8,7 @@
 
             var result = await client.Wargaming.SearchAccountsAsync("Test");
 
-            var rs = await client.WorldOfTanks.GetAccountByIdAsync(result.First().AccountId);
+            var rs = await client.WorldOfTanks.GetUsersTankStatisticsAsync(result.First().AccountId, 10529);
 
             var a = await client.WorldOfTanks.SearchAccountsAsync(result.First().Nickname);
         }
