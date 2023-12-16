@@ -25,7 +25,7 @@ namespace WgApi.Models
         [JsonPropertyName("bonds")]
         public int Bonds { get; set; }
         [JsonPropertyName("battle_life_time")]
-        public int BattleLifeTime { get; set; }
+        public int BattleLifeTimeInSeconds { get; set; }
         [JsonPropertyName("ban_info")]
         public object BanInfo { get; set; }
     }
