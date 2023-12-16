@@ -29,7 +29,7 @@ namespace WgApi.Models.WotStatistics
         public int Piercings { get; set; }
 
         [JsonPropertyName("max_damage_tank_id")]
-        public int MaxDamageTankId { get; set; }
+        public int? MaxDamageTankId { get; set; }
 
         [JsonPropertyName("xp")]
         public int XP { get; set; }
@@ -47,7 +47,7 @@ namespace WgApi.Models.WotStatistics
         public int Draws { get; set; }
 
         [JsonPropertyName("max_xp_tank_id")]
-        public int MaxXpTankId { get; set; }
+        public int? MaxXpTankId { get; set; }
 
         [JsonPropertyName("battles")]
         public int Battles { get; set; }
@@ -59,7 +59,7 @@ namespace WgApi.Models.WotStatistics
         public float AvgDamageAssisted { get; set; }
 
         [JsonPropertyName("max_frags_tank_id")]
-        public int MaxFragsTankId { get; set; }
+        public int? MaxFragsTankId { get; set; }
 
         [JsonPropertyName("avg_damage_assisted_track")]
         public float AvgDamageAssistedTrack { get; set; }

@@ -28,5 +28,12 @@ namespace WgApi.Services
                 .AddParamIfNotExist("account_id", accountId.ToString()));
             return response.Data.First().Value;
         }
+
+        public async Task<Achievement> GetAccountAchievementsAsync(int accountId)
+        {
+            var response = await GetResponseAsync<Dictionary<string, Achievement>>("wot/account/achievements/?"
+                .AddParamIfNotExist("account_id", accountId.ToString()));
+            return response.Data.First().Value;
+        }
     }
 }
