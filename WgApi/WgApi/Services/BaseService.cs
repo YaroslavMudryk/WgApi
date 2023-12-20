@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Net.Http.Json;
+using System.Text.Json;
 using WgApi.Helpers.Extensions;
 using WgApi.Models.ApiContracts;
 
@@ -26,6 +27,14 @@ namespace WgApi.Services
         {
             var finalUrl = url.AddParamIfNotExist("application_id", _applicationId).AddParamIfNotExist("access_token", _accessToken);
             var responseMessage = await _httpClient.GetAsync(finalUrl);
+            var content = await responseMessage.Content.ReadAsStringAsync();
+            return JsonSerializer.Deserialize<Response<TResponse>>(content);
+        }
+
+        public async Task<Response<TResponse>> PostResponseAsync<TResponse>(string url)
+        {
+            var finalUrl = url.AddParamIfNotExist("application_id", _applicationId).AddParamIfNotExist("access_token", _accessToken);
+            var responseMessage = await _httpClient.PostAsync(finalUrl, JsonContent.Create(new { }));
             var content = await responseMessage.Content.ReadAsStringAsync();
             return JsonSerializer.Deserialize<Response<TResponse>>(content);
         }

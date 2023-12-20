@@ -6,17 +6,19 @@
         {
             var client = new WgApi("test1", "test2");
 
-            var result = await client.WorldOfTanks.SearchAccountsAsync("Rozvidnyk");
+            var result = await client.WorldOfTanks.SearchAccountsAsync("Test");
 
-            var rozvidnyk = result.First();
+            var tankist = result.First();
 
-            var a = await client.WorldOfTanks.GetAccountByIdAsync(rozvidnyk.AccountId);
+            var a = await client.WorldOfTanks.GetAccountByIdAsync(tankist.AccountId);
+
+            var myClan = await client.WorldOfTanks.GetClanByIdAsync(a.ClanId);
 
             var maxFragsTank = a.Statistics.Frags.MaxBy(s => s.Value);
 
-            var rs = await client.WorldOfTanks.GetUsersTankStatisticsAsync(rozvidnyk.AccountId, Convert.ToInt32(maxFragsTank.Key));
+            var rs = await client.WorldOfTanks.GetUsersTankStatisticsAsync(tankist.AccountId, Convert.ToInt32(maxFragsTank.Key));
 
-            var da = await client.WorldOfTanks.GetAccountAchievementsAsync(rozvidnyk.AccountId);
+            var da = await client.WorldOfTanks.GetAccountAchievementsAsync(tankist.AccountId);
         }
     }
 }
