@@ -11,12 +11,4 @@ namespace WgApi.Models
         [JsonPropertyName("tank_id")]
         public int TankId { get; set; }
     }
-
-    public class TankDetailStatistic
-    {
-        [JsonPropertyName("wins")]
-        public int Wins { get; set; }
-        [JsonPropertyName("battles")]
-        public int Battles { get; set; }
-    }
 }

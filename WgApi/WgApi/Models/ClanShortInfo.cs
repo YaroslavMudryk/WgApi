@@ -1,9 +1,8 @@
 ﻿using System.Text.Json.Serialization;
-using WgApi.Helpers.Converters;
 
 namespace WgApi.Models
 {
-    public class ClanInfo
+    public class ClanShortInfo
     {
         [JsonPropertyName("members_count")]
         public int MembersCount { get; set; }
@@ -15,8 +14,7 @@ namespace WgApi.Models
         public string Color { get; set; }
 
         [JsonPropertyName("created_at")]
-        [JsonConverter(typeof(UnixEpochTimeToDateTimeJsonConverter))]
-        public DateTime CreatedAt { get; set; }
+        public int CreatedAt { get; set; }
 
         [JsonPropertyName("tag")]
         public string Tag { get; set; }

@@ -73,47 +73,4 @@ namespace WgApi.Models
         [JsonPropertyName("accepts_join_requests")]
         public bool AcceptsJoinRequests { get; set; }
     }
-
-    public class ClanPrivate
-    {
-        [JsonPropertyName("clan_treasury")]
-        public ClanTreasury ClanTreasury { get; set; }
-
-        [JsonPropertyName("online_members")]
-        public int[] OnlineMembers { get; set; }
-
-        [JsonPropertyName("treasury")]
-        public int Treasury { get; set; }
-    }
-
-    public class ClanTreasury
-    {
-        [JsonPropertyName("credits")]
-        public object Credits { get; set; }
-
-        [JsonPropertyName("gold")]
-        public int Gold { get; set; }
-
-        [JsonPropertyName("crystal")]
-        public int Crystal { get; set; }
-    }
-
-    public class ClanMember
-    {
-        [JsonPropertyName("role")]
-        public string Role { get; set; }
-
-        [JsonPropertyName("role_i18n")]
-        public string RoleI18n { get; set; }
-
-        [JsonPropertyName("joined_at")]
-        [JsonConverter(typeof(UnixEpochTimeToDateTimeJsonConverter))]
-        public DateTime? JoinedAt { get; set; }
-
-        [JsonPropertyName("account_id")]
-        public int AccountId { get; set; }
-
-        [JsonPropertyName("account_name")]
-        public string AccountName { get; set; }
-    }
 }
