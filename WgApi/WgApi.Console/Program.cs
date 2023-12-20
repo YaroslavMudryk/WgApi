@@ -4,7 +4,7 @@
     {
         static async Task Main(string[] args)
         {
-            var client = new WgApi("test1", "test2");
+            var client = new WgApi("41449282bd410a217000d01702c80fc5", "13851dfcc94c7c9952c09f38d2ee281dd531f6f9");
 
             var result = await client.WorldOfTanks.SearchAccountsAsync("Test");
 
